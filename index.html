@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Fale com Especialista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Reset completo para iframe */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: auto;
+            height: auto;
+            background-color: transparent;
+        }
+        
+        /* Container minimalista */
+        .button-container {
+            display: inline-block;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Botão estiloso com borda gradiente */
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            color: #2563eb;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background-color: transparent;
+            position: relative;
+            border: none;
+            outline: none;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
+        }
+        
+        /* Efeito hover sofisticado */
+        .contact-btn:hover {
+            color: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.5), 
+                        0 4px 6px -1px rgba(37, 99, 235, 0.1), 
+                        0 2px 4px -1px rgba(37, 99, 235, 0.06);
+        }
+        
+        /* Efeito ativo */
+        .contact-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.5);
+        }
+        
+        /* Foco acessível */
+        .contact-btn:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        /* Efeito de borda animada (opcional) */
+        .contact-btn::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 0.6rem;
+            background: linear-gradient(45deg, #3b82f6, #93c5fd);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-btn:hover::after {
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="#contato" class="contact-btn">
+            Fale com um especialista
+        </a>
+    </div>
+
+    <script>
+        // Opcional: Tracking de cliques
+        document.querySelector('.contact-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Botão clicado - pronto para integração com analytics');
+            // Aqui você pode adicionar seu código de tracking (Google Analytics, etc)
+        });
+    </script>
+</body>
+</html>
